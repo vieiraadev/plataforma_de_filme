@@ -4,14 +4,608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieStream</title>
     <link rel="stylesheet" href="styles.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>site</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
-    <script src="script.js"></script>
+<body class="darkmode">
+    <nav class="main-menu">
+        <div>
+            <div class="user-info">
+                <img src="/img/IMG_0141.HEIC" alt="user" />
+                <p>VieiraDev</p>
+            </div>
+            <ul>
+                <li class="nav-item active">
+                    <a href="#">
+                        <i class="fa fa-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
 
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-map nav-icon"></i>
+                        <span class="nav-text">Discover</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-arrow-trend-up nav-icon"></i>
+                        <span class="nav-text">Trending</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-chart-bar nav-icon"></i>
+                        <span class="nav-text">Analytics</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-heart nav-icon"></i>
+                        <span class="nav-text"></span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-fire nav-icon"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <ul>
+            <li class="nav-item">
+                <a href="#">
+                    <i class="fa fa-gear nav-icon"></i>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#">
+                    <i class="fa fa-right-from-bracket nav-icon"></i>
+                    <span class="nav-text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <div class="left-content">
+            <div class="search-and-check">
+                <form class="search-box">
+                    <input type="text" placeholder="Search event..." />
+                    <i class="bx bx-search"></i>
+                </form>
+                <div class="interaction-control-mobile interactions">
+                    <i class="fa-regular fa-envelope notified"></i>
+                    <i class="fa-regular fa-bell notified"></i>
+                    <div class="toggle" onclick="switchTheme()">
+                        <div class="mode-icon moon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="mode-icon sun hidden">
+                            <i class="bx bxs-sun"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header">
+                <picture class="morning-img hidden">
+                    <img class="header-mobile" src="/img/movie.webp" alt="" />
+                    <img class="header-tablet" src="/img/movie.webp" alt="" />
+                    <img class="header-desktop" src="/img/movie.webp" alt="" />
+                </picture>
+
+                <picture class="night-img">
+                    <img class="header-mobile" src="/img/movie.webp" alt="" />
+                    <img class="header-tablet" src="/img/movie.webp" alt="" />
+                    <img class="header-desktop" src="/img/movie.webp" alt="" />
+                </picture>
+
+            </div>
+            <div class="upcoming-events">
+                <h1>Filmes Em Destaque</h1>
+                <div class="event-container">
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image.png" alt="" />
+                            <p>1h 36m</p>
+                            <i class="bx bx-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>Divertida Mente 2</h2>
+                            <p>Diretor: Kelsey Mann</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #e48e2c">Infantil</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image2.png" alt="" />
+                            <p>1h 53m</p>
+                            <i class="bx bxs-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>Maze Runner: Correr ou Morrer</h2>
+                            <p>Diretor: Ellen Goldsmith-Vein</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #582bac">Ação</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image3.png" alt="" />
+                            <p>1h 32m</p>
+                            <i class="bx bx-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>Super Mario Bros O Filme</h2>
+                            <p>Diretor: Aaron Horvath</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #e48e2c">Infantil</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image4.png" alt="" />
+                            <p>2h 15m</p>
+                            <i class="bx bx-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>It - A Coisa</h2>
+                            <p>Diretor: Andy Muschietti</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #b31a4d">Terror</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image5.png" alt="" />
+                            <p>1h 43m</p>
+                            <i class="bx bx-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>Arranha-Céu: Coragem Sem Limite</h2>
+                            <p>Diretor: Rawson Marshall Thurber</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #582bac">Ação</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image6.png" alt="" />
+                            <p>1h 34m</p>
+                            <i class="bx bx-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>Viagem 2: A Ilha Misteriosa</h2>
+                            <p>Diretor: Brad Peyton</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #4a920f">Aventura</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image7.png" alt="" />
+                            <p>2h 26m</p>
+                            <i class="bx bxs-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>Harry Potter e as Relíquias da Morte</h2>
+                            <p>Diretor: David Yates</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #4a920f">Aventura</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image8.png" alt="" />
+                            <p>1h 33m</p>
+                            <i class="bx bx-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>O Bom Dinossauro</h2>
+                            <p>Diretor: Peter Sohn</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #e48e2c">Infantil</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card event-card">
+                        <div class="event-header">
+                            <img src="/img/image9.png" alt="" />
+                            <p>1h 42m</p>
+                            <i class="bx bx-heart like-btn"></i>
+                        </div>
+                        <div class="event-content">
+                            <h2>Gente Grande</h2>
+                            <p>Diretor: Dennis Dugan</p>
+                        </div>
+                        <div class="event-footer">
+                            <p style="background-color: #b31a4d">Comédia</p>
+                            <div class="btn-group">
+                                <button>Comprar Filme</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <i class="fa-solid fa-share"></i>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews">
+                <h1>Comentários</h1>
+                <div class="review-container">
+                    <div class="card review-card">
+                        <h2>Super Mario Bros O Filme</h2>
+                        <div class="ratings">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bx-star"></i>
+                            <i class="bx bx-star"></i>
+                        </div>
+                        <p>
+                            "Super Mario Bros." é um filme que entrega uma boa dose de nostalgia
+                            e diversão visual, mas que peca em aspectos como roteiro e desenvolvimento
+                            de personagens. Para os fãs do jogo, é uma experiência agradável, mas para
+                            quem busca uma narrativa mais sólida e envolvente, pode deixar a desejar.
+                            Uma avaliação de 3 estrelas reflete bem a mistura de pontos altos e baixos,
+                        </p>
+                    </div>
+
+                    <div class="card review-card">
+                        <h2>Divertida Mente 2</h2>
+                        <div class="ratings">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star-half"></i>
+                        </div>
+                        <p>
+                            "Divertida Mente 2" é uma obra que transcende a mera animação infantil,
+                            oferecendo uma experiência rica, emocionante e reflexiva.
+                            A Pixar continua a demonstrar sua habilidade em criar histórias
+                            que ressoam profundamente com o público. Com um roteiro bem elaborado,
+                            personagens encantadores e uma animação de tirar o fôlego,
+                            este filme merece cada uma das 5 estrelas e meia pela sua
+                            excelência em todos os aspectos. É uma jornada emocional imperdível
+                            que ficará na memória de todos que a assistirem.
+                        </p>
+                    </div>
+
+                    <div class="card review-card">
+                        <h2>Harry Potter e as Relíquias da Morte</h2>
+                        <div class="ratings">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <p>
+                            "Harry Potter e as Relíquias da Morte" é uma conclusão magistral]
+                            para uma série que marcou uma geração. Com um roteiro bem adaptado,
+                            performances memoráveis, visuais deslumbrantes e uma trilha sonora emocionante,
+                            o filme entrega uma experiência cinematográfica completa e inesquecível.
+                            Merecedor de 5 estrelas, é uma obra que celebra a magia da história de J.K.
+                            Rowling e proporciona uma despedida épica para Harry Potter e seus amigos.
+                        </p>
+                    </div>
+                    <div class="card review-card">
+                        <h2>Maze Runner: Correr ou Morrer</h2>
+                        <div class="ratings">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <p>
+                            "Maze Runner: Correr ou Morrer" é uma adaptação cinematográfica
+                            impressionante que entrega uma experiência emocionante e cheia de suspense.
+                            Com um roteiro bem adaptado, personagens cativantes, visuais deslumbrantes
+                            e uma trilha sonora impactante, o filme merece 5 estrelas por sua capacidade
+                            de envolver e entreter. É uma jornada emocionante que deixa o público ansioso
+                            pelo próximo capítulo da saga.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="interaction-control interactions">
+                <i class="fa-regular fa-envelope notified"></i>
+                <i class="fa-regular fa-bell notified"></i>
+                <div class="toggle" onclick="switchTheme()">
+                    <div class="mode-icon moon">
+                        <i class="bx bxs-moon"></i>
+                    </div>
+                    <div class="mode-icon sun hidden">
+                        <i class="bx bxs-sun"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics">
+                <h1>MovieStream</h1>
+                <div class="analytics-container">
+                    <div class="total-events">
+                        <div class="event-number card">
+                            <h2>Todos os Filmes</h2>
+                            <p>867</p>
+                            <i class="bx bx-check-circle"></i>
+                        </div>
+                        <div class="event-number card">
+                            <h2>Em Breve</h2>
+                            <p>36</p>
+                            <i class="bx bx-timer"></i>
+                        </div>
+                    </div>
+
+                    <div class="chart" id="doughnut-chart">
+                        <h2>Filmes Mais Vendidos</h2>
+                        <canvas id="doughnut"></canvas>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts">
+                <h1>Usuários</h1>
+                <div class="contacts-container">
+                    <div class="contact-status">
+                        <div class="contact-activity">
+                            <img src="/img/image10.png" alt="" />
+                            <p>Ana Favoritou <span>Divertida Mente 2</span></p>
+                        </div>
+                        <small>1 hora atrás</small>
+                    </div>
+
+                    <div class="contact-status">
+                        <div class="contact-activity">
+                            <img src="/img/image11.png" alt="" />
+                            <p>
+                                Cris comprou
+                                <span>Viagem 2: A Ilha Misteriosa</span>
+                            </p>
+                        </div>
+                        <small>4 horas atrás</small>
+                    </div>
+
+                    <div class="contact-status">
+                        <div class="contact-activity">
+                            <img src="img/image12.png" alt="" />
+                            <p>
+                                Artur Comprou
+                                <span>It - A Coisa</span>
+                            </p>
+                        </div>
+                        <small>1 dia atrás</small>
+                    </div>
+
+                    <div class="contact-status">
+                        <div class="contact-activity">
+                            <img src="/img/image13.png" alt="" />
+                            <p>
+                                Sofia comentou sobre
+                                <span>Maze Runner: Correr ou Morrer</span>
+                            </p>
+                        </div>
+                        <small>2 dias atrás</small>
+                    </div>
+
+                    <div class="contact-status">
+                        <div class="contact-activity">
+                            <img src="/img/image14.png" alt="" />
+                            <p>
+                                Marina comprou
+                                <span>Super Mario Bros O Filme</span>
+                            </p>
+                        </div>
+                        <small>3 dias atrás</small>
+                    </div>
+
+                    <div class="contact-status">
+                        <div class="contact-activity">
+                            <img src="/img/image15.png" alt="" />
+                            <p>
+                                Mateus comprou
+                                <span>Harry Potter e as Relíquias da Morte</span>
+                            </p>
+                        </div>
+                        <small>45 minutos atrás</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -46,3 +46,13 @@ Abra um Pull Request.<br>
 
 ![image](https://github.com/vieiraadev/plataforma_de_filme/assets/164572708/b62d5094-5ea8-4d3d-8fe6-e1e4928f04df)
 
+
+
+![image](https://github.com/vieiraadev/plataforma_de_filme/assets/164572708/980bd388-39ad-4e69-94f7-8ecff39b591a)
+
+
+
+![image](https://github.com/vieiraadev/plataforma_de_filme/assets/164572708/30249ac4-4d26-47de-adb6-d17379e697cb)
+
+
+

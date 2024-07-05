@@ -26,6 +26,7 @@ git clone https://github.com/seu-usuario/plataforma-de-filmes.git<br>
 Navegue até o diretório do projeto:<br>
 cd plataforma-de-filmes<br>
 Abra o arquivo index.html no seu navegador.<br>
+
 Contribuição<br>
 
 Sinta-se à vontade para contribuir com o projeto. Para isso, siga os passos abaixo:

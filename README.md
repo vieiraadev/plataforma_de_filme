@@ -1,4 +1,4 @@
-Plataforma de Filmes
+
 
 Este projeto foi desenvolvido utilizando HTML, CSS e JavaScript, com o objetivo de criar a tela principal de uma plataforma de filmes com uma interface moderna e intuitiva.
 
